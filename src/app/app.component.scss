@@ -4,7 +4,6 @@
 
 .container {
     display: flex;
-    // max-width: 1440px;
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -13,36 +12,65 @@
     .SideBar {
         display: flex;
         flex-direction: column;
-        width: 30%;
+        width: 25%;
         height: 100%;
         background-color: #fff;
+
+        app-logo {
+            display: flex;
+            width: 100%;
+            height: auto;
+            gap: 48px;
+        }
+
+        app-menu {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .ToolBar {
+        display: none;
+    }
+
+    .mobile-mode {
+        display: none;
     }
 
     .rightFrame {
         display: flex;
         flex-direction: column;
-        width: 70%;
-        height: 100%;
+        width: 75%;
+        min-height: 100vh;
 
         .Banner {
             display: flex;
             min-width: 100%;
-            height: 65%;
+            min-height: 65vh;
             align-items: flex-end;
             background-image: url(../assets/image/bulbul.png);
             background-repeat: no-repeat;
-            background-position: center center;
+            background-position: left 90%;
             background-size: cover;
             overflow: hidden;
 
             .Wrap-Title {
                 display: flex;
                 flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-end;
                 width: 100%;
-                height: 20%;
-                border: 3px solid black;
+                height: 30%;
+                gap: 5px;
 
                 >* {
+                    width: 90%;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    color: #fff;
+                    text-align: right;
+                    font-family: 'Noto Sans TC';
                     margin: 0;
                     padding: 0;
                 }
@@ -51,40 +79,87 @@
                     display: flex;
                     width: 100%;
                     height: 50%;
-                    justify-content: flex-end;
-                    border: 1px solid black;
+                    font-size: 50px;
                 }
 
                 .describe {
                     display: flex;
                     width: 100%;
-                    height: 50%;
+                    height: 20%;
                     justify-content: flex-end;
-                    border: 1px solid black;
+                    font-size: 16px;
+                    font-weight: lighter;
+                    margin-top: 1%;
                 }
             }
         }
 
-        .Feature-section {
+        app-section {
             display: flex;
             width: 100%;
-            height: 35%;
+            min-height: 35vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #DCCCBC;
         }
     }
 }
 
-$breakpoint-mobile: 768px;
+$breakpoint-mobile: 840px;
 
 @media(max-width: $breakpoint-mobile) {
     .container {
-        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
 
-        .SideBar {}
+        .SideBar {
+            display: none;
+        }
+
+        .ToolBar {
+            display: flex;
+            width: 100%;
+            height: 10%;
+            justify-content: center;
+            align-items: center;
+
+            app-logo {
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+
+        .mobile-mode {
+            display: flex;
+        }
 
         .rightFrame {
-            .Banner {}
+            width: 100%;
 
-            .Feature-section {}
+            .Banner {
+                width: 100%;
+                height: 50%;
+
+                .Wrap-Title {
+                    width: 100%;
+                    height: auto;
+
+                    >* {
+                        width: 50%;
+                    }
+
+                    .title {
+                        width: 50%;
+                    }
+                }
+            }
+
+            app-section {
+                min-height: auto;
+                padding: 60px 60px 48px 48px;
+            }
         }
     }
 }

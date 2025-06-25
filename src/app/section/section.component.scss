@@ -1,0 +1,60 @@
+.InnerFrame {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5%;
+
+  .Section-Frame {
+    display: flex;
+    width: 30%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Noto Sans TC';
+    gap: 24px;
+
+    .section {
+      position: relative;
+      display: flex;
+      width: auto;
+      writing-mode: vertical-lr;
+      font-size: 34px;
+      letter-spacing: 6px;
+      margin: 0;
+    }
+
+    .decorate-icon {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border: 8px solid #AA666699;
+      border-radius: 50%;
+      bottom: -10px;
+      right: -10px;
+    }
+  }
+
+  .describe {
+    display: block;
+    width: 70%;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+$breakpoint-mobile: 840px;
+
+@media(max-width: $breakpoint-mobile) {
+  .InnerFrame {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 48px;
+
+    .Section-Frame {
+      width: 80%;
+    }
+  }
+}

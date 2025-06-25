@@ -1,0 +1,186 @@
+.container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+
+  .Hambergur-Button {
+    display: none;
+  }
+
+  .Title {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+  }
+
+  .Logo {
+    position: absolute;
+    display: flex;
+    width: 75px;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.4);
+    right: -37.5px;
+
+    .element1 {
+      position: relative;
+      display: flex;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      border-bottom-right-radius: 50%;
+      border-top-left-radius: 70%;
+      border-top-right-radius: 40%;
+
+      .element1-1 {
+        display: flex;
+        width: 100%;
+        height: 60%;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid rgb(235, 235, 235);
+        border-top-left-radius: 70%;
+        border-top-right-radius: 20%;
+        border-bottom-right-radius: 50%;
+
+        .element1-1-1 {
+          display: flex;
+          width: 8px;
+          height: 8px;
+          background-color: #000;
+          border-radius: 100%;
+          margin: 10px;
+        }
+      }
+
+      .element1-2 {
+        position: absolute;
+        width: 8px;
+        height: 5px;
+        rotate: -10deg;
+        background-color: #000;
+        border-top-right-radius: 100%;
+
+        right: -7px;
+        top: 12px;
+      }
+    }
+  }
+}
+
+$breakpoint-mobile: 840px;
+
+@media(max-width: $breakpoint-mobile) {
+  .container {
+    position: static;
+    justify-content: space-between;
+    padding: 16px;
+
+    .Hambergur-Button {
+      display: flex;
+      width: auto;
+      height: auto;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      .lines-Frame {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 5px;
+
+        .line {
+          height: 3px;
+          background-color: #000;
+
+          &.long {
+            width: 24px;
+          }
+
+          &.short {
+            width: 16px;
+          }
+        }
+
+        &:hover .line {
+          background-color: #bbbbbb;
+        }
+      }
+    }
+
+    .Title {
+      width: auto;
+      font-size: 24px;
+    }
+
+    .Logo {
+      position: static;
+      width: 40px;
+      height: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+      &:hover {
+        animation: swing 1s ease-in-out;
+      }
+
+      @keyframes swing {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        25% {
+          transform: rotate(10deg);
+        }
+
+        50% {
+          transform: rotate(-10deg);
+        }
+
+        75% {
+          transform: rotate(10deg);
+        }
+
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      .element1 {
+        width: 20px;
+        height: 20px;
+
+        .element1-1 {
+          .element1-1-1 {
+            width: 4px;
+            height: 4px;
+            margin: 5px;
+          }
+        }
+
+        .element1-2 {
+          position: absolute;
+          width: 4px;
+          height: 2.5px;
+          right: -3.5px;
+          top: 6px;
+        }
+      }
+    }
+  }
+}

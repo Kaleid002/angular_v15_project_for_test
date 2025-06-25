@@ -1,7 +1,14 @@
 <div class="container">
   <div class="SideBar">
+    <app-logo></app-logo>
     <app-menu></app-menu>
   </div>
+  
+  <div class="ToolBar">
+    <app-logo (menuSwitch)="handleMenuSwitch()"></app-logo>
+  </div>
+  <app-menu class="mobile-mode" [isOpen]="isMenuOpen"></app-menu>
+
   <div class="rightFrame">
     <div class="Banner">
       <div class="Wrap-Title">
@@ -9,8 +16,6 @@
         <p class="describe">又名白頭鵯。以果實、昆蟲為主食，無法消化小米、穀類。平均壽命約 8~10 年。</p>
       </div>
     </div>
-    <div class="Feature-section">
-      <app-section></app-section>
-    </div>
+    <app-section></app-section>
   </div>
 </div>
